@@ -1,0 +1,210 @@
+body {
+  font-size: 1rem;
+  font-family: BogleWeb, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+.widget {
+  border: 1px solid #e6e7e8;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.16);
+  display: block;
+  padding: 15px 16px;
+  background-color: #fff;
+  overflow: hidden;
+  max-width: 300px;
+  margin-left: auto;
+  .total {
+    border-top: 1px solid #e6e7e8;
+    border-bottom: 1px solid #e6e7e8;
+    padding: 10px 0;
+    margin: 10px 0;
+    color: #000;
+    line-height: 16px;
+  }
+}
+.subtotal {
+  font-size: 0.875rem;
+}
+.item {
+  line-height: 20px;
+  margin: 8px 0;
+  overflow: hidden;
+  &:first-child {
+    margin-top: 0;
+  }
+  .label-div {
+    color: #000;
+    float: left;
+    .label {
+      font-size: 14px;
+    }
+    .brackets {
+      padding-left: 5px;
+      font-size: 12px;
+    }
+  }
+  .value {
+    font-size: 14px;
+    float: right;
+    &.highlight {
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+}
+.expandable-widget {
+  font-weight: 400;
+  font-size: 14px;
+  border-bottom: 1px solid #e6e7e8;
+  padding: 15px 0;
+  overflow: hidden;
+  & + & {
+    border-top: 0;
+  }
+  .title {
+    cursor: pointer;
+    .sign {
+      padding-left: 10px;
+      font-size: 20px;
+      font-weight: 300;
+    }
+  }
+}
+.product-widget {
+  margin-top: 10px;
+  img {
+    float: left;
+    width: 55px;
+  }
+  .product-details {
+    float: right;
+    .product-title {
+      font-size: 14px;
+      line-height: 18px;
+      max-width: 150px;
+    }
+    .product-price {
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .product-quantity {
+      font-size: 12px;
+    }
+    .product-meta {
+      font-size: 12px;
+      color: #6d6e71;
+      word-wrap: break-word;
+    }
+  }
+}
+.promo-widget {
+  margin-top: 10px;
+  input {
+    border-radius: 5px;
+    border: 1px solid #e6e7e8;
+    height: 25px;
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+  a {
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 15px;
+    border: 2px solid #000;
+    font-weight: 700;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  .remove {
+    padding-left: 10px;
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+}
+$tooltip-color: #fff;
+$tooltip-text-color: #000;
+.tooltip {
+  position: relative;
+}
+.tooltip-trigger {
+  display: inline-block;
+  text-decoration: underline;
+}
+.tooltip-bubble {
+  min-width: 120px;
+  max-width: 210px;
+  position: absolute;
+  z-index: 10;
+  &::after {
+    content: "";
+    position: absolute;
+  }
+}
+.tooltip-top {
+  bottom: 100%;
+  left: 50%;
+  padding-bottom: 9px;
+  transform: translateX(-50%);
+  &::after {
+    border-left: 9px solid #fff;
+    border-right: 9px solid #fff;
+    border-top: 9px solid $tooltip-color;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.tooltip-bottom {
+  top: 100%;
+  left: 50%;
+  padding-top: 9px;
+  transform: translateX(-50%);
+  &::after {
+    border-left: 9px solid #fff;
+    border-right: 9px solid #fff;
+    border-bottom: 9px solid $tooltip-color;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.tooltip-left {
+  top: 50%;
+  right: 100%;
+  padding-right: 9px;
+  transform: translateY(-50%);
+  &::after {
+    border-left: 9px solid $tooltip-color;
+    border-top: 9px solid #fff;
+    border-bottom: 9px solid #fff;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+}
+.tooltip-right {
+  top: 50%;
+  left: 100%;
+  padding-left: 9px;
+  transform: translateY(-50%);
+  &::after {
+    border-right: 9px solid $tooltip-color;
+    border-top: 9px solid #fff;
+    border-bottom: 9px solid #fff;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+}
+.tooltip-message {
+  background: $tooltip-color;
+  color: $tooltip-text-color;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  padding: 0.75em;
+  text-align: center;
+  border: 1px solid #e6e7e8;
+  border-radius: 8px;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.16);
+}
